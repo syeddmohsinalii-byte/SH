@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Sketchbook Builder | SH. SAEED Art n Craft Karachi</title>
+  <meta name="description" content="Configure and order your custom hand-bound sketchbook with your choice of 150-300gsm watercolor, cartridge, or toned tan paper. Handcrafted at SH. SAEED Karachi." />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#eef2ff', 600: '#4f46e5', 700: '#4338ca', 900: '#1e1b4b' }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-rose-500 selection:text-white bg-art-grid">
+
+  <!-- TOP BAR -->
+  <div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 bg-rose-500/20 text-rose-300 px-2.5 py-0.5 rounded-full font-semibold">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-rose-400"></i>
+          Handcrafted In Karachi
+        </span>
+        <span class="hidden md:inline text-slate-300">Bespoke Sketchbook Studio &bull; SH. SAEED Gulshan-e-Iqbal</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <div class="live-store-status"></div>
+        <a href="https://wa.me/923333241272" target="_blank" class="text-emerald-400 font-semibold flex items-center gap-1">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i> 0333-3241272
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3.5 group">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-rose-600 to-indigo-600 flex items-center justify-center text-white font-heading font-black text-xl shadow-md">
+            SS
+          </div>
+          <div>
+            <span class="font-heading font-black text-xl text-slate-900 tracking-tight">SH. SAEED</span>
+            <p class="text-[11px] text-rose-600 font-bold">CUSTOM SKETCHBOOK ATELIER</p>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1.5 font-semibold text-sm text-slate-700">
+          <a href="index.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition">Home</a>
+          <a href="products.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition">Products Catalog</a>
+          <a href="sketchbook-builder.html" class="px-3.5 py-2 rounded-xl text-rose-600 font-bold bg-rose-50/90 transition flex items-center gap-1.5 shadow-sm">
+            <i data-lucide="sparkles" class="w-4 h-4 text-rose-500"></i> Custom Sketchbook
+          </a>
+          <a href="reviews.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition flex items-center gap-1.5">
+            <span>Reviews</span>
+            <span class="bg-amber-100 text-amber-700 text-xs px-2 py-0.5 rounded-full font-black">4.6★</span>
+          </a>
+          <a href="about.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition">About Us</a>
+          <a href="contact.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition">Visit Store & Map</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <button onclick="toggleCartDrawer(true)" class="relative p-2.5 rounded-xl bg-white hover:bg-rose-50 text-slate-700 hover:text-rose-600 transition border border-slate-200/90 shadow-sm">
+            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+            <span class="cart-count-badge hidden absolute -top-1.5 -right-1.5 bg-rose-600 text-white font-extrabold text-[11px] w-5 h-5 rounded-full flex items-center justify-center">0</span>
+          </button>
+          <a href="https://wa.me/923333241272" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md">
+            <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Faiz Bhai
+          </a>
+          <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-slate-700">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-2">
+      <a href="index.html" class="block px-3 py-2 rounded-lg font-medium text-slate-700">Home</a>
+      <a href="products.html" class="block px-3 py-2 rounded-lg font-medium text-slate-700">Products Catalog</a>
+      <a href="sketchbook-builder.html" class="block px-3 py-2 rounded-lg text-rose-600 font-bold bg-rose-50">Custom Sketchbook</a>
+      <a href="reviews.html" class="block px-3 py-2 rounded-lg font-medium text-slate-700">Verified Reviews</a>
+      <a href="about.html" class="block px-3 py-2 rounded-lg font-medium text-slate-700">About Us</a>
+      <a href="contact.html" class="block px-3 py-2 rounded-lg font-medium text-slate-700">Visit Store & Map</a>
+    </div>
+  </header>
+
+  <!-- INTRO HEADER -->
+  <section class="bg-mesh-dark text-white py-14 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-500/20 border border-rose-400/30 text-rose-300 text-xs font-bold mb-3">
+          <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+          <span>Google Review Verified Signature Service</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-heading font-black tracking-tight">Design Your Custom Artist Sketchbook</h1>
+        <p class="text-slate-300 text-xs sm:text-sm mt-2 max-w-xl leading-relaxed">
+          "They make custom sketchbooks for me with my own choice of paper..." — Naveed Hussain (Google Local Guide). Configure your dream book below and we will handcraft it for you.
+        </p>
+      </div>
+      <div class="bg-white/10 backdrop-blur-md border border-white/15 p-5 rounded-3xl text-xs max-w-xs shadow-xl">
+        <div class="font-extrabold text-amber-300 flex items-center gap-1.5">
+          <i data-lucide="clock" class="w-4 h-4"></i> Karachi Turnaround Time:
+        </div>
+        <p class="text-slate-300 mt-1.5 leading-relaxed">Ready within 24 to 48 hours for store pickup at Gulshan or citywide rider delivery!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE BUILDER APPLICATION -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Configuration Form Steps -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- STEP 1: SIZE -->
+          <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-heading font-black text-lg text-slate-900 flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-rose-600 text-white text-xs font-bold flex items-center justify-center">1</span>
+                Select Dimensions / Size
+              </h3>
+              <span id="selected-size-label" class="text-xs font-bold text-rose-600 bg-rose-50 px-2.5 py-1 rounded-full">A4 Standard</span>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <label class="cursor-pointer">
+                <input type="radio" name="book-size" value="A5" onchange="updateSketchbookConfig()" class="peer sr-only" />
+                <div class="p-4 rounded-2xl border border-slate-200 peer-checked:border-rose-600 peer-checked:bg-rose-50/50 hover:bg-slate-50 transition text-center shadow-sm">
+                  <div class="font-bold text-sm text-slate-900">A5 Pocket</div>
+                  <div class="text-[11px] text-slate-500">14.8 x 21.0 cm</div>
+                  <div class="text-[11px] text-indigo-600 font-extrabold mt-1">Base: Rs. 1,150</div>
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input type="radio" name="book-size" value="A4" checked onchange="updateSketchbookConfig()" class="peer sr-only" />
+                <div class="p-4 rounded-2xl border border-slate-200 peer-checked:border-rose-600 peer-checked:bg-rose-50/50 hover:bg-slate-50 transition text-center shadow-sm">
+                  <div class="font-bold text-sm text-slate-900">A4 Portfolio</div>
+                  <div class="text-[11px] text-slate-500">21.0 x 29.7 cm</div>
+                  <div class="text-[11px] text-indigo-600 font-extrabold mt-1">Base: Rs. 1,650</div>
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input type="radio" name="book-size" value="A3" onchange="updateSketchbookConfig()" class="peer sr-only" />
+                <div class="p-4 rounded-2xl border border-slate-200 peer-checked:border-rose-600 peer-checked:bg-rose-50/50 hover:bg-slate-50 transition text-center shadow-sm">
+                  <div class="font-bold text-sm text-slate-900">A3 Studio</div>
+                  <div class="text-[11px] text-slate-500">29.7 x 42.0 cm</div>
+                  <div class="text-[11px] text-indigo-600 font-extrabold mt-1">Base: Rs. 2,450</div>
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input type="radio" name="book-size" value="Square-8" onchange="updateSketchbookConfig()" class="peer sr-only" />
+                <div class="p-4 rounded-2xl border border-slate-200 peer-checked:border-rose-600 peer-checked:bg-rose-50/50 hover:bg-slate-50 transition text-center shadow-sm">
+                  <div class="font-bold text-sm text-slate-900">Square 8x8"</div>
+                  <div class="text-[11px] text-slate-500">20.3 x 20.3 cm</div>
+                  <div class="text-[11px] text-indigo-600 font-extrabold mt-1">Base: Rs. 1,450</div>
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input type="radio" name="book-size" value="Square-12" onchange="updateSketchbookConfig()" class="peer sr-only" />
+                <div class="p-4 rounded-2xl border border-slate-200 peer-checked:border-rose-600 peer-checked:bg-rose-50/50 hover:bg-slate-50 transition text-center shadow-sm">
+                  <div class="font-bold text-sm text-slate-900">Square 12x12"</div>
+                  <div class="text-[11px] text-slate-500">30.5 x 30.5 cm</div>
+                  <div class="text-[11px] text-indigo-600 font-extrabold mt-1">Base: Rs. 2,350</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 2: PAPER TYPE -->
+          <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-heading font-black text-lg text-slate-900 flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-rose-600 text-white text-xs font-bold flex items-center justify-center">2</span>
+                Choose Internal Paper & Weight
+              </h3>
+              <span id="selected-paper-label" class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full">Watercolor 300gsm</span>
+            </div>
+
+            <div class="space-y-2.5">
+              <label class="flex items-center justify-between p-4 rounded-2xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition shadow-sm">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="book-paper" value="watercolor-300" checked onchange="updateSketchbookConfig()" class="accent-rose-600" />
+                  <div>
+                    <div class="font-bold text-xs sm:text-sm text-slate-900">300gsm Cold-Pressed 100% Cotton (Watercolor Pro)</div>
+                    <div class="text-[11px] text-slate-500">Heavyweight texture, handles gouache, acrylic, and heavy washes without buckling.</div>
+                  </div>
+                </div>
+                <span class="text-xs font-extrabold text-emerald-600 shrink-0">+ Rs. 400</span>
+              </label>
+
+              <label class="flex items-center justify-between p-4 rounded-2xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition shadow-sm">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="book-paper" value="cartridge-150" onchange="updateSketchbookConfig()" class="accent-rose-600" />
+                  <div>
+                    <div class="font-bold text-xs sm:text-sm text-slate-900">150gsm Ivory Cartridge Paper (Pencil, Ink & Markers)</div>
+                    <div class="text-[11px] text-slate-500">Silky smooth grain, ideal for fine technical drafting, manga lineart & graphite.</div>
+                  </div>
+                </div>
+                <span class="text-xs font-bold text-slate-500 shrink-0">Included</span>
+              </label>
+
+              <label class="flex items-center justify-between p-4 rounded-2xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition shadow-sm">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="book-paper" value="mixed-250" onchange="updateSketchbookConfig()" class="accent-rose-600" />
+                  <div>
+                    <div class="font-bold text-xs sm:text-sm text-slate-900">250gsm Mixed Media Paper (All Mediums)</div>
+                    <div class="text-[11px] text-slate-500">Balanced vellum finish for acrylic pens, pastels, gouache & light collage.</div>
+                  </div>
+                </div>
+                <span class="text-xs font-extrabold text-emerald-600 shrink-0">+ Rs. 250</span>
+              </label>
+
+              <label class="flex items-center justify-between p-4 rounded-2xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition shadow-sm">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="book-paper" value="toned-tan" onchange="updateSketchbookConfig()" class="accent-rose-600" />
+                  <div>
+                    <div class="font-bold text-xs sm:text-sm text-slate-900">200gsm Warm Toned Tan Kraft Paper (Chalk & White Highlights)</div>
+                    <div class="text-[11px] text-slate-500">Warm earthy hue makes contrast illustrations and portrait studies look stunning.</div>
+                  </div>
+                </div>
+                <span class="text-xs font-extrabold text-emerald-600 shrink-0">+ Rs. 200</span>
+              </label>
+
+              <label class="flex items-center justify-between p-4 rounded-2xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition shadow-sm">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="book-paper" value="black-card" onchange="updateSketchbookConfig()" class="accent-rose-600" />
+                  <div>
+                    <div class="font-bold text-xs sm:text-sm text-slate-900">220gsm Black Velvet Card Sheets (Metallic & Gel Pens)</div>
+                    <div class="text-[11px] text-slate-500">Dramatic midnight black paper for metallic inks, white gel, and neon pencils.</div>
+                  </div>
+                </div>
+                <span class="text-xs font-extrabold text-emerald-600 shrink-0">+ Rs. 250</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 3: PAGE COUNT -->
+          <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-sm space-y-4">
+            <h3 class="font-heading font-black text-lg text-slate-900 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-rose-600 text-white text-xs font-bold flex items-center justify-center">3</span>
+              Number of Pages / Thickness
+            </h3>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <label class="cursor-pointer">
+                <input type="radio" name="book-pages" value="40" onchange="updateSketchbookConfig()" class="peer sr-only" />
+                <div class="p-3.5 rounded-2xl border border-slate-200 peer-checked:border-rose-600 peer-checked:bg-rose-50/50 hover:bg-slate-50 transition text-center shadow-sm">
+                  <div class="font-bold text-sm text-slate-900">40 Pages</div>
+                  <div class="text-[11px] text-slate-500">20 Leaves (Light)</div>
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input type="radio" name="book-pages" value="60" checked onchange="updateSketchbookConfig()" class="peer sr-only" />
+                <div class="p-3.5 rounded-2xl border border-slate-200 peer-checked:border-rose-600 peer-checked:bg-rose-50/50 hover:bg-slate-50 transition text-center shadow-sm">
+                  <div class="font-bold text-sm text-slate-900">60 Pages</div>
+                  <div class="text-[11px] text-slate-500">30 Leaves (Standard)</div>
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input type="radio" name="book-pages" value="100" onchange="updateSketchbookConfig()" class="peer sr-only" />
+                <div class="p-3.5 rounded-2xl border border-slate-200 peer-checked:border-rose-600 peer-checked:bg-rose-50/50 hover:bg-slate-50 transition text-center shadow-sm">
+                  <div class="font-bold text-sm text-slate-900">100 Pages</div>
+                  <div class="text-[11px] text-slate-500">50 Leaves (+Rs. 300)</div>
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input type="radio" name="book-pages" value="160" onchange="updateSketchbookConfig()" class="peer sr-only" />
+                <div class="p-3.5 rounded-2xl border border-slate-200 peer-checked:border-rose-600 peer-checked:bg-rose-50/50 hover:bg-slate-50 transition text-center shadow-sm">
+                  <div class="font-bold text-sm text-slate-900">160 Pages</div>
+                  <div class="text-[11px] text-slate-500">80 Leaves (+Rs. 600)</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 4: BINDING STYLE -->
+          <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-sm space-y-4">
+            <h3 class="font-heading font-black text-lg text-slate-900 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-rose-600 text-white text-xs font-bold flex items-center justify-center">4</span>
+              Binding Method & Spine
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <label class="cursor-pointer">
+                <input type="radio" name="book-binding" value="spiral" checked onchange="updateSketchbookConfig()" class="peer sr-only" />
+                <div class="p-4 rounded-2xl border border-slate-200 peer-checked:border-rose-600 peer-checked:bg-rose-50/50 hover:bg-slate-50 transition shadow-sm">
+                  <div class="font-bold text-xs sm:text-sm text-slate-900">Hardcover Wire-O Spiral</div>
+                  <div class="text-[11px] text-slate-500 mt-1">360° flip back, great for outdoor sketching and desk comfort.</div>
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input type="radio" name="book-binding" value="layflat" onchange="updateSketchbookConfig()" class="peer sr-only" />
+                <div class="p-4 rounded-2xl border border-slate-200 peer-checked:border-rose-600 peer-checked:bg-rose-50/50 hover:bg-slate-50 transition shadow-sm">
+                  <div class="font-bold text-xs sm:text-sm text-slate-900">180° Lay-Flat Stitched</div>
+                  <div class="text-[11px] text-slate-500 mt-1">Seamless panoramic two-page spreads without center gutter bulge (+Rs. 250).</div>
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input type="radio" name="book-binding" value="hardbound" onchange="updateSketchbookConfig()" class="peer sr-only" />
+                <div class="p-4 rounded-2xl border border-slate-200 peer-checked:border-rose-600 peer-checked:bg-rose-50/50 hover:bg-slate-50 transition shadow-sm">
+                  <div class="font-bold text-xs sm:text-sm text-slate-900">Linen Cloth Hardbound</div>
+                  <div class="text-[11px] text-slate-500 mt-1">Archival museum finish, elastic ribbon band & bookmark (+Rs. 350).</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 5: PERSONAL EMBOSSING / CUSTOM TITLE -->
+          <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-sm space-y-4">
+            <h3 class="font-heading font-black text-lg text-slate-900 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-rose-600 text-white text-xs font-bold flex items-center justify-center">5</span>
+              Custom Cover Inscription (Optional)
+            </h3>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Name, Initials or Portfolio Title to Inscribe on Cover:</label>
+              <input 
+                id="custom-name-input" 
+                type="text" 
+                placeholder="e.g. Ayesha Malik • IVS Architecture Thesis" 
+                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-rose-500 font-semibold"
+                oninput="updateSketchbookConfig()"
+              />
+              <p class="text-[11px] text-slate-400 mt-1">Personalized with silver/gold foil stamping or minimalist black print.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Live Visual Preview & Instant Order Trigger -->
+        <div class="lg:col-span-5 sticky top-28 space-y-6">
+          
+          <div class="bg-white p-6 rounded-3xl border-2 border-rose-200 shadow-2xl space-y-6">
+            
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+              <div>
+                <span class="text-[10px] font-black uppercase tracking-wider text-rose-600 bg-rose-50 px-2.5 py-0.5 rounded-full">Live Custom Spec</span>
+                <h4 class="font-heading font-black text-xl text-slate-900 mt-1">Your Bespoke Book</h4>
+              </div>
+              <div class="text-right">
+                <span class="text-xs text-slate-400 block font-semibold">Estimated Price</span>
+                <span id="live-price-display" class="text-2xl font-black text-rose-600">Rs. 2,050</span>
+              </div>
+            </div>
+
+            <!-- Visual Simulated Book Rendering with realistic leather/kraft texture -->
+            <div class="relative bg-gradient-to-tr from-stone-900 via-neutral-900 to-stone-950 p-6 rounded-2xl text-white overflow-hidden shadow-2xl flex flex-col justify-between h-72 border border-stone-800">
+              
+              <!-- Subtle spine shadow overlay -->
+              <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-black/80 to-transparent pointer-events-none"></div>
+
+              <div class="flex justify-between items-start relative z-10">
+                <div class="flex items-center gap-2 pl-3">
+                  <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                  <span class="text-[10px] font-mono tracking-widest text-slate-300 uppercase">SH. SAEED KARACHI</span>
+                </div>
+                <span id="preview-badge" class="bg-white/10 text-rose-300 text-[10px] font-black px-2.5 py-0.5 rounded-full backdrop-blur">
+                  A4 Portfolio
+                </span>
+              </div>
+
+              <!-- Center Inscription Preview -->
+              <div class="text-center py-4 relative z-10">
+                <div id="preview-inscription" class="font-heading font-extrabold text-xl text-gradient-gold tracking-wide drop-shadow-sm">
+                  [ Your Inscription Here ]
+                </div>
+                <div id="preview-paper-spec" class="text-xs text-slate-300 mt-2 font-mono">
+                  300gsm Cotton Watercolor &bull; 60 Pages
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between text-[11px] text-slate-400 border-t border-white/10 pt-3 relative z-10 pl-3">
+                <span id="preview-binding-spec">Hardcover Wire-O Spiral</span>
+                <span class="text-emerald-400 font-bold flex items-center gap-1">
+                  <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Handmade Quality
+                </span>
+              </div>
+            </div>
+
+            <!-- Specs Summary List -->
+            <div class="space-y-2 text-xs text-slate-600 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+              <div class="flex justify-between py-1 border-b border-slate-200/60">
+                <span class="text-slate-500">Dimensions:</span>
+                <span id="sum-size" class="font-bold text-slate-800">A4 Portfolio (21x29.7cm)</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-slate-200/60">
+                <span class="text-slate-500">Paper Grade:</span>
+                <span id="sum-paper" class="font-bold text-slate-800">300gsm Cotton Watercolor</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-slate-200/60">
+                <span class="text-slate-500">Page Count:</span>
+                <span id="sum-pages" class="font-bold text-slate-800">60 Pages (30 Leaves)</span>
+              </div>
+              <div class="flex justify-between py-1">
+                <span class="text-slate-500">Binding:</span>
+                <span id="sum-binding" class="font-bold text-slate-800">Hardcover Spiral</span>
+              </div>
+            </div>
+
+            <!-- Order Buttons -->
+            <div class="space-y-3 pt-2">
+              <button onclick="addCustomSketchbookToCart()" class="w-full py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/25 transition">
+                <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                <span>Add Custom Book to Cart</span>
+              </button>
+
+              <button onclick="orderCustomOnWhatsApp()" class="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/25 transition">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Send Custom Order to Faiz Bhai via WhatsApp</span>
+              </button>
+            </div>
+
+            <p class="text-[11px] text-slate-400 text-center">
+              Faiz Bhai will personally review your paper choice and confirm binding time.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 text-xs pt-12 pb-8 border-t border-slate-800 text-center">
+    <div class="max-w-7xl mx-auto px-4">
+      <p>&copy; 2026 SH. SAEED Art n Craft &bull; Karachi's Premier Handcrafted Sketchbook Atelier</p>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div id="cart-drawer-overlay" onclick="toggleCartDrawer(false)" class="cart-drawer-overlay fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50"></div>
+  <aside id="cart-drawer" class="cart-drawer fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-50 shadow-2xl flex flex-col">
+    <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+      <div class="flex items-center gap-2">
+        <i data-lucide="shopping-bag" class="w-5 h-5 text-indigo-600"></i>
+        <h3 class="font-heading font-bold text-lg text-slate-900">Your Stationery Order</h3>
+      </div>
+      <button onclick="toggleCartDrawer(false)" class="p-2 text-slate-400 hover:text-slate-700">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto p-4 space-y-3">
+      <div id="cart-drawer-empty" class="text-center py-16 text-slate-400">
+        <p class="text-sm font-medium text-slate-600">Your order list is empty.</p>
+      </div>
+      <div id="cart-drawer-items"></div>
+    </div>
+    <div id="cart-drawer-footer" class="hidden p-4 border-t border-slate-200 bg-slate-50 space-y-3">
+      <div class="flex items-center justify-between text-sm">
+        <span class="text-slate-600 font-medium">Estimated Subtotal:</span>
+        <span class="cart-total-amount text-lg font-black text-indigo-600">Rs. 0</span>
+      </div>
+      <div class="grid grid-cols-2 gap-2 pt-1">
+        <a href="cart.html" class="w-full py-3 rounded-xl bg-slate-200 text-slate-800 text-center font-bold text-xs">View Cart</a>
+        <button onclick="sendWhatsAppOrder()" class="w-full py-3 rounded-xl bg-emerald-600 text-white font-bold text-xs">WhatsApp</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/store-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    let currentConfig = {
+      size: 'A4',
+      sizeName: 'A4 Portfolio (21x29.7cm)',
+      basePrice: 1650,
+      paper: 'watercolor-300',
+      paperName: '300gsm Cotton Watercolor',
+      paperCost: 400,
+      pages: 60,
+      pagesCost: 0,
+      binding: 'spiral',
+      bindingName: 'Hardcover Spiral',
+      bindingCost: 0,
+      inscription: ''
+    };
+
+    function updateSketchbookConfig() {
+      const sizeRadio = document.querySelector('input[name="book-size"]:checked');
+      if (sizeRadio) {
+        currentConfig.size = sizeRadio.value;
+        if (currentConfig.size === 'A5') {
+          currentConfig.basePrice = 1150;
+          currentConfig.sizeName = 'A5 Pocket (14.8x21cm)';
+        } else if (currentConfig.size === 'A4') {
+          currentConfig.basePrice = 1650;
+          currentConfig.sizeName = 'A4 Portfolio (21x29.7cm)';
+        } else if (currentConfig.size === 'A3') {
+          currentConfig.basePrice = 2450;
+          currentConfig.sizeName = 'A3 Studio (29.7x42cm)';
+        } else if (currentConfig.size === 'Square-8') {
+          currentConfig.basePrice = 1450;
+          currentConfig.sizeName = 'Square 8x8 Inches';
+        } else if (currentConfig.size === 'Square-12') {
+          currentConfig.basePrice = 2350;
+          currentConfig.sizeName = 'Square 12x12 Inches';
+        }
+      }
+
+      const paperRadio = document.querySelector('input[name="book-paper"]:checked');
+      if (paperRadio) {
+        currentConfig.paper = paperRadio.value;
+        if (currentConfig.paper === 'watercolor-300') {
+          currentConfig.paperCost = 400;
+          currentConfig.paperName = '300gsm Cotton Watercolor';
+        } else if (currentConfig.paper === 'cartridge-150') {
+          currentConfig.paperCost = 0;
+          currentConfig.paperName = '150gsm Ivory Cartridge';
+        } else if (currentConfig.paper === 'mixed-250') {
+          currentConfig.paperCost = 250;
+          currentConfig.paperName = '250gsm Mixed Media';
+        } else if (currentConfig.paper === 'toned-tan') {
+          currentConfig.paperCost = 200;
+          currentConfig.paperName = '200gsm Toned Tan Kraft';
+        } else if (currentConfig.paper === 'black-card') {
+          currentConfig.paperCost = 250;
+          currentConfig.paperName = '220gsm Black Card';
+        }
+      }
+
+      const pagesRadio = document.querySelector('input[name="book-pages"]:checked');
+      if (pagesRadio) {
+        currentConfig.pages = parseInt(pagesRadio.value);
+        if (currentConfig.pages === 40) currentConfig.pagesCost = -100;
+        else if (currentConfig.pages === 60) currentConfig.pagesCost = 0;
+        else if (currentConfig.pages === 100) currentConfig.pagesCost = 300;
+        else if (currentConfig.pages === 160) currentConfig.pagesCost = 600;
+      }
+
+      const bindRadio = document.querySelector('input[name="book-binding"]:checked');
+      if (bindRadio) {
+        currentConfig.binding = bindRadio.value;
+        if (currentConfig.binding === 'spiral') {
+          currentConfig.bindingCost = 0;
+          currentConfig.bindingName = 'Hardcover Wire-O Spiral';
+        } else if (currentConfig.binding === 'layflat') {
+          currentConfig.bindingCost = 250;
+          currentConfig.bindingName = '180° Lay-Flat Stitched';
+        } else if (currentConfig.binding === 'hardbound') {
+          currentConfig.bindingCost = 350;
+          currentConfig.bindingName = 'Linen Cloth Hardbound';
+        }
+      }
+
+      currentConfig.inscription = (document.getElementById('custom-name-input')?.value || '').trim();
+
+      const finalPrice = currentConfig.basePrice + currentConfig.paperCost + currentConfig.pagesCost + currentConfig.bindingCost;
+
+      document.getElementById('selected-size-label').textContent = currentConfig.size;
+      document.getElementById('selected-paper-label').textContent = currentConfig.paperName;
+      document.getElementById('live-price-display').textContent = `Rs. ${finalPrice.toLocaleString()}`;
+
+      document.getElementById('preview-badge').textContent = currentConfig.size;
+      document.getElementById('preview-inscription').textContent = currentConfig.inscription ? `"${currentConfig.inscription}"` : '[ Personalized Inscription ]';
+      document.getElementById('preview-paper-spec').textContent = `${currentConfig.paperName} • ${currentConfig.pages} Pages`;
+      document.getElementById('preview-binding-spec').textContent = currentConfig.bindingName;
+
+      document.getElementById('sum-size').textContent = currentConfig.sizeName;
+      document.getElementById('sum-paper').textContent = currentConfig.paperName;
+      document.getElementById('sum-pages').textContent = `${currentConfig.pages} Pages (${currentConfig.pages / 2} Leaves)`;
+      document.getElementById('sum-binding').textContent = currentConfig.bindingName;
+    }
+
+    function addCustomSketchbookToCart() {
+      const finalPrice = currentConfig.basePrice + currentConfig.paperCost + currentConfig.pagesCost + currentConfig.bindingCost;
+      const desc = `${currentConfig.sizeName} | ${currentConfig.paperName} | ${currentConfig.pages} Pages | ${currentConfig.bindingName}${currentConfig.inscription ? ' | Inscription: ' + currentConfig.inscription : ''}`;
+      
+      const customId = `custom-sketch-${Date.now()}`;
+      CartManager.addItem(customId, 1, {
+        name: `Custom Handcrafted Sketchbook (${currentConfig.size})`,
+        price: finalPrice,
+        description: desc,
+        image: 'assets/images/products/custom-sketchbook-a4.jpg'
+      });
+
+      toggleCartDrawer(true);
+    }
+
+    function orderCustomOnWhatsApp() {
+      const finalPrice = currentConfig.basePrice + currentConfig.paperCost + currentConfig.pagesCost + currentConfig.bindingCost;
+      const text = `🎨 *CUSTOM SKETCHBOOK ORDER - SH. SAEED ART N CRAFT*\n` +
+        `Salam Faiz Bhai! I configured a custom sketchbook on your website:\n\n` +
+        `▪️ *Size:* ${currentConfig.sizeName}\n` +
+        `▪️ *Paper Grade:* ${currentConfig.paperName}\n` +
+        `▪️ *Page Count:* ${currentConfig.pages} Pages (${currentConfig.pages / 2} Sheets)\n` +
+        `▪️ *Binding Style:* ${currentConfig.bindingName}\n` +
+        `▪️ *Cover Inscription:* ${currentConfig.inscription || 'None (Plain cover)'}\n` +
+        `▪️ *Estimated Price:* Rs. ${finalPrice.toLocaleString()}\n\n` +
+        `Please confirm when you can fabricate this at your Gulshan store!`;
+
+      window.open(`https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateSketchbookConfig();
+    });
+  </script>
+</body>
+</html>

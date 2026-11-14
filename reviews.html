@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Reviews & Wall of Love | SH. SAEED Art n Craft Karachi</title>
+  <meta name="description" content="Read 412+ verified Google reviews from Karachi's art community, art school students, architects, and hobbyists for SH. SAEED Art n Craft Gulshan." />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#eef2ff', 600: '#4f46e5', 700: '#4338ca', 900: '#1e1b4b' }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- TOP BAR -->
+  <div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 bg-amber-500/20 text-amber-300 px-2.5 py-0.5 rounded-full font-semibold">
+          ★ 4.6 Google Rating
+        </span>
+        <span class="hidden md:inline text-slate-300">412+ Verified Customer Reviews &bull; Momin Square, Gulshan-e-Iqbal, Karachi</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <div class="live-store-status"></div>
+        <a href="https://wa.me/923333241272" target="_blank" class="text-emerald-400 font-semibold flex items-center gap-1">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i> 0333-3241272
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-indigo-700 to-rose-500 flex items-center justify-center text-white font-heading font-black text-xl shadow-md">
+            SS
+          </div>
+          <div>
+            <span class="font-heading font-extrabold text-xl text-slate-900 tracking-tight">SH. SAEED</span>
+            <p class="text-[11px] text-indigo-600 font-semibold">CUSTOMER WALL OF LOVE</p>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1 font-medium text-sm text-slate-700">
+          <a href="index.html" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-100 transition">Home</a>
+          <a href="products.html" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-100 transition">Products Catalog</a>
+          <a href="sketchbook-builder.html" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-100 transition flex items-center gap-1 text-rose-600 font-semibold">
+            <i data-lucide="sparkles" class="w-4 h-4 text-rose-500"></i> Custom Sketchbook
+          </a>
+          <a href="reviews.html" class="px-3 py-2 rounded-lg text-indigo-600 font-bold bg-indigo-50/80 transition flex items-center gap-1">
+            <span>Reviews</span>
+            <span class="bg-amber-100 text-amber-700 text-xs px-1.5 py-0.2 rounded font-bold">4.6★</span>
+          </a>
+          <a href="about.html" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-100 transition">About Us</a>
+          <a href="contact.html" class="px-3 py-2 rounded-lg hover:text-indigo-600 hover:bg-slate-100 transition">Visit Store & Map</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <button onclick="toggleCartDrawer(true)" class="relative p-2.5 rounded-xl bg-slate-100 hover:bg-indigo-50 text-slate-700 hover:text-indigo-600 transition border border-slate-200">
+            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+            <span class="cart-count-badge hidden absolute -top-1.5 -right-1.5 bg-rose-600 text-white font-bold text-[11px] w-5 h-5 rounded-full flex items-center justify-center">0</span>
+          </button>
+          <a href="https://wa.me/923333241272" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold text-xs shadow-md">
+            <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Faiz Bhai
+          </a>
+          <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-slate-700">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-2">
+      <a href="index.html" class="block px-3 py-2 rounded-lg font-medium text-slate-700">Home</a>
+      <a href="products.html" class="block px-3 py-2 rounded-lg font-medium text-slate-700">Products Catalog</a>
+      <a href="sketchbook-builder.html" class="block px-3 py-2 rounded-lg font-semibold text-rose-600">Custom Sketchbook</a>
+      <a href="reviews.html" class="block px-3 py-2 rounded-lg text-indigo-600 font-bold bg-indigo-50">Verified Reviews (4.6★)</a>
+      <a href="about.html" class="block px-3 py-2 rounded-lg font-medium text-slate-700">About Us</a>
+      <a href="contact.html" class="block px-3 py-2 rounded-lg font-medium text-slate-700">Visit Store & Map</a>
+    </div>
+  </header>
+
+  <!-- REVIEWS HERO / RATING DASHBOARD -->
+  <section class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-7 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-bold border border-white/20">
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+            <span>Google Business Profile Verified</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl font-heading font-black tracking-tight leading-tight">
+            Trusted by Generations of <br />
+            <span class="text-gradient-gold">Karachi Artists & Students</span>
+          </h1>
+          <p class="text-slate-300 text-xs sm:text-sm max-w-xl leading-relaxed">
+            From IVS architecture students preparing thesis models to fine art painters sourcing Cadence pigments and school children getting stationery — hear what our customers have experienced over the last 40 years.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-3">
+            <a href="https://share.google/3AlUP0bTsWLrEm3HJ" target="_blank" class="px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs flex items-center gap-2 shadow transition">
+              <i data-lucide="external-link" class="w-4 h-4"></i> View on Google Maps
+            </a>
+            <a href="https://wa.me/923333241272?text=Salam%20Faiz%20Bhai,%20I%20saw%20your%20reviews%20and%20want%20to%20order%20supplies!" target="_blank" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-xs flex items-center gap-2">
+              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i> Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Rating Breakdown Card -->
+        <div class="lg:col-span-5 bg-white/5 backdrop-blur-xl border border-white/15 p-6 sm:p-8 rounded-3xl">
+          <div class="flex items-center gap-6 pb-6 border-b border-white/10">
+            <div class="text-5xl font-heading font-black text-white">4.6</div>
+            <div>
+              <div class="flex text-amber-400 text-lg">★★★★★</div>
+              <div class="text-xs text-slate-300 font-medium mt-1">Based on 412 verified Google reviews</div>
+              <div class="text-[11px] text-emerald-400 font-semibold mt-0.5">Top-rated art shop in Gulshan-e-Iqbal</div>
+            </div>
+          </div>
+
+          <!-- Star Distribution Bars -->
+          <div class="space-y-2 pt-6 text-xs text-slate-300">
+            <div class="flex items-center gap-3">
+              <span class="w-12 text-slate-400">5 Stars</span>
+              <div class="flex-1 h-2.5 bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full bg-amber-400 rounded-full" style="width: 71%;"></div>
+              </div>
+              <span class="w-10 text-right font-mono text-slate-400">294</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-12 text-slate-400">4 Stars</span>
+              <div class="flex-1 h-2.5 bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full bg-amber-400/80 rounded-full" style="width: 21%;"></div>
+              </div>
+              <span class="w-10 text-right font-mono text-slate-400">85</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-12 text-slate-400">3 Stars</span>
+              <div class="flex-1 h-2.5 bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full bg-amber-400/50 rounded-full" style="width: 5%;"></div>
+              </div>
+              <span class="w-10 text-right font-mono text-slate-400">19</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-12 text-slate-400">2 Stars</span>
+              <div class="flex-1 h-2.5 bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full bg-amber-400/30 rounded-full" style="width: 2%;"></div>
+              </div>
+              <span class="w-10 text-right font-mono text-slate-400">7</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-12 text-slate-400">1 Star</span>
+              <div class="flex-1 h-2.5 bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full bg-amber-400/20 rounded-full" style="width: 2%;"></div>
+              </div>
+              <span class="w-10 text-right font-mono text-slate-400">7</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER & SEARCH REVIEWS -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        
+        <!-- Category Filter Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-1 text-xs font-semibold">
+          <button onclick="filterReviews('all')" id="rev-tab-all" class="rev-tab active px-4 py-2 rounded-xl bg-indigo-600 text-white shrink-0">
+            All Reviews (18)
+          </button>
+          <button onclick="filterReviews('Fine Arts')" id="rev-tab-finearts" class="rev-tab px-4 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 shrink-0">
+            🎨 Fine Arts & Paints
+          </button>
+          <button onclick="filterReviews('Custom Sketchbooks')" id="rev-tab-custom" class="rev-tab px-4 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 shrink-0">
+            📖 Custom Sketchbooks
+          </button>
+          <button onclick="filterReviews('5-star')" id="rev-tab-5star" class="rev-tab px-4 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 shrink-0">
+            ⭐ 5-Star Only
+          </button>
+        </div>
+
+        <!-- Review Search -->
+        <div class="w-full md:w-72 relative">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+          <input 
+            id="review-search" 
+            type="text" 
+            placeholder="Search within reviews..." 
+            class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-indigo-500"
+            oninput="renderReviews()"
+          />
+        </div>
+
+      </div>
+
+      <!-- Reviews Grid -->
+      <div id="full-reviews-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STORE ATMOSPHERE RECAP BANNER -->
+  <section class="py-16 bg-slate-900 text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 space-y-4">
+      <span class="text-xs uppercase tracking-widest text-amber-400 font-bold">Have you visited SH. SAEED?</span>
+      <h2 class="text-2xl sm:text-3xl font-heading font-black">Help Karachi's Art Community by Sharing Your Experience</h2>
+      <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
+        Whether you purchased Cadence paints, stretched canvases, or had a custom sketchbook assembled by Faiz Bhai — your feedback keeps our 40-year legacy alive.
+      </p>
+      <div class="pt-4 flex flex-wrap justify-center gap-3">
+        <a href="https://share.google/3AlUP0bTsWLrEm3HJ" target="_blank" class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs flex items-center gap-2 shadow">
+          <i data-lucide="star" class="w-4 h-4 fill-current"></i> Write a Google Review
+        </a>
+        <a href="products.html" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-xs flex items-center gap-2">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i> Browse Catalog & Order
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 text-xs pt-12 pb-8 border-t border-slate-800 text-center">
+    <div class="max-w-7xl mx-auto px-4">
+      <p>&copy; 2026 SH. SAEED Art n Craft &bull; Karachi's Biggest Retail Stationery & Fine Art Shop</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/store-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    let currentReviewFilter = 'all';
+
+    function filterReviews(filter) {
+      currentReviewFilter = filter;
+      document.querySelectorAll('.rev-tab').forEach(tab => {
+        tab.classList.remove('bg-indigo-600', 'text-white');
+        tab.classList.add('bg-slate-50', 'text-slate-700', 'border', 'border-slate-200');
+      });
+
+      const activeTab = document.querySelector(`[onclick="filterReviews('${filter}')"]`);
+      if (activeTab) {
+        activeTab.classList.remove('bg-slate-50', 'text-slate-700', 'border', 'border-slate-200');
+        activeTab.classList.add('bg-indigo-600', 'text-white');
+      }
+
+      renderReviews();
+    }
+
+    function renderReviews() {
+      const container = document.getElementById('full-reviews-grid');
+      const searchQuery = (document.getElementById('review-search')?.value || '').trim().toLowerCase();
+
+      let list = STORE_REVIEWS.filter(r => {
+        let matchesCategory = true;
+        if (currentReviewFilter === '5-star') {
+          matchesCategory = r.rating === 5;
+        } else if (currentReviewFilter !== 'all') {
+          matchesCategory = r.category === currentReviewFilter;
+        }
+
+        const matchesSearch = !searchQuery ||
+          r.name.toLowerCase().includes(searchQuery) ||
+          r.comment.toLowerCase().includes(searchQuery) ||
+          r.category.toLowerCase().includes(searchQuery);
+
+        return matchesCategory && matchesSearch;
+      });
+
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full text-center py-12 bg-white rounded-2xl border border-slate-200">
+            <p class="text-sm font-semibold text-slate-600">No reviews found matching your search.</p>
+          </div>
+        `;
+        return;
+      }
+
+      let html = '';
+      list.forEach(r => {
+        html += `
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between hover:shadow-md transition">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex text-amber-400 text-sm">
+                  ${'★'.repeat(r.rating)}
+                </div>
+                <span class="text-[11px] text-slate-400">${r.date}</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-700 italic leading-relaxed">
+                "${r.comment}"
+              </p>
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center text-xs">
+                  ${r.name.charAt(0)}
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-slate-900">${r.name}</div>
+                  <div class="text-[10px] text-slate-400">${r.badge}</div>
+                </div>
+              </div>
+              <span class="text-[10px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">
+                ${r.category}
+              </span>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+      lucide.createIcons();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderReviews();
+    });
+  </script>
+</body>
+</html>

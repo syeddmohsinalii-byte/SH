@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart & WhatsApp Checkout | SH. SAEED Art n Craft Karachi</title>
+  <meta name="description" content="Review your selected fine art supplies, canvases, and stationery, select your Karachi delivery area, and send your order directly to Faiz Bhai on WhatsApp." />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#eef2ff', 600: '#4f46e5', 700: '#4338ca', 900: '#1e1b4b' }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white bg-art-grid">
+
+  <!-- TOP BAR -->
+  <div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-full font-semibold">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Direct WhatsApp Checkout
+        </span>
+        <span class="hidden md:inline text-slate-300">Fast Karachi Rider Delivery & Store Pickup</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <div class="live-store-status"></div>
+        <a href="https://wa.me/923333241272" target="_blank" class="text-emerald-400 font-semibold flex items-center gap-1">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i> 0333-3241272
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3.5 group">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-700 to-rose-500 flex items-center justify-center text-white font-heading font-black text-xl shadow-md">
+            SS
+          </div>
+          <div>
+            <span class="font-heading font-black text-xl text-slate-900 tracking-tight">SH. SAEED</span>
+            <p class="text-[11px] text-indigo-600 font-bold">SHOPPING CART & CHECKOUT</p>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1.5 font-semibold text-sm text-slate-700">
+          <a href="index.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition">Home</a>
+          <a href="products.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition">Products Catalog</a>
+          <a href="sketchbook-builder.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition flex items-center gap-1.5 text-rose-600 font-bold">
+            <i data-lucide="sparkles" class="w-4 h-4 text-rose-500"></i> Custom Sketchbook
+          </a>
+          <a href="reviews.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition flex items-center gap-1.5">
+            <span>Reviews</span>
+            <span class="bg-amber-100 text-amber-700 text-xs px-2 py-0.5 rounded-full font-black">4.6★</span>
+          </a>
+          <a href="about.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition">About Us</a>
+          <a href="contact.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition">Visit Store & Map</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="products.html" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Catalog
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CART PAGE CONTENT -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-8">
+        <h1 class="text-3xl font-heading font-black text-slate-900">Your Shopping Cart</h1>
+        <p class="text-slate-500 text-xs sm:text-sm mt-1">Review your items and proceed with our instant WhatsApp order funnel.</p>
+      </div>
+
+      <!-- Main Layout: Cart Table (Left) + Checkout Form & Summary (Right) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Cart Items List -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-sm">
+            
+            <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-4">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Selected Supplies</span>
+              <button onclick="CartManager.clearCart()" class="text-xs text-rose-600 hover:text-rose-800 font-bold flex items-center gap-1">
+                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Clear Cart
+              </button>
+            </div>
+
+            <!-- Items Container -->
+            <div id="checkout-cart-container" class="space-y-4">
+              <!-- Rendered via JavaScript -->
+            </div>
+
+            <!-- Empty Cart Placeholder -->
+            <div id="checkout-empty-state" class="hidden text-center py-16">
+              <i data-lucide="shopping-basket" class="w-16 h-16 mx-auto text-slate-300 stroke-1 mb-4"></i>
+              <h3 class="font-heading font-bold text-lg text-slate-800">Your Cart is Currently Empty</h3>
+              <p class="text-xs text-slate-400 mt-1 max-w-xs mx-auto">
+                Explore our catalog of Cadence paints, stretched canvases, brushes, custom sketchbooks, and stationery.
+              </p>
+              <a href="products.html" class="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs shadow-lg transition">
+                <i data-lucide="shopping-bag" class="w-4 h-4"></i> Browse Products Catalog
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="grid grid-cols-3 gap-3 text-center text-xs">
+            <div class="p-3.5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+              <div class="font-black text-slate-900">100% Original</div>
+              <div class="text-[11px] text-slate-500 font-medium">Genuine Art Brands</div>
+            </div>
+            <div class="p-3.5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+              <div class="font-black text-slate-900">40+ Years</div>
+              <div class="text-[11px] text-slate-500 font-medium">Karachi Art Trust</div>
+            </div>
+            <div class="p-3.5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+              <div class="font-black text-slate-900">Same-Day</div>
+              <div class="text-[11px] text-slate-500 font-medium">Rider Delivery Option</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Checkout Form & WhatsApp Order Summary -->
+        <div class="lg:col-span-5 sticky top-28 space-y-6">
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-2xl space-y-6">
+            
+            <div>
+              <span class="text-[10px] font-black uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200/50">
+                Step 2: Delivery & Contact Info
+              </span>
+              <h3 class="font-heading font-black text-xl text-slate-900 mt-2">Delivery & Order Details</h3>
+              <p class="text-xs text-slate-500 mt-0.5">We will generate your pre-formatted order to message Faiz Bhai.</p>
+            </div>
+
+            <form id="order-form" onsubmit="event.preventDefault(); submitFinalOrder();" class="space-y-4 text-xs">
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Your Full Name *</label>
+                <input id="cust-name" type="text" required placeholder="e.g. Bilal Ahmed" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 font-medium focus:outline-none focus:border-indigo-500" />
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Phone / WhatsApp Number *</label>
+                <input id="cust-phone" type="tel" required placeholder="0300-1234567" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 font-medium focus:outline-none focus:border-indigo-500" />
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Karachi Delivery Area / District *</label>
+                <select id="cust-area" onchange="calculateDeliveryFee()" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 font-semibold focus:outline-none focus:border-indigo-500">
+                  <option value="Gulshan-e-Iqbal (Nearby Store)">Gulshan-e-Iqbal (Nearby Shop - Rs. 150 Rider / Free Pickup)</option>
+                  <option value="Gulistan-e-Johar">Gulistan-e-Johar (Rs. 200)</option>
+                  <option value="Federal B Area / Buffer Zone">Federal B Area / Buffer Zone (Rs. 200)</option>
+                  <option value="PECHS / Bahadurabad / Tariq Road">PECHS / Bahadurabad / Tariq Road (Rs. 250)</option>
+                  <option value="Clifton / DHA Karachi">Clifton / DHA Karachi (Rs. 350)</option>
+                  <option value="North Nazimabad / Nazimabad">North Nazimabad / Nazimabad (Rs. 250)</option>
+                  <option value="Saddar / Urdu Bazaar Area">Saddar / Urdu Bazaar Area (Rs. 250)</option>
+                  <option value="Malir / Model Colony / Airport">Malir / Model Colony / Airport (Rs. 250)</option>
+                  <option value="Bahria Town / Scheme 33">Bahria Town / Scheme 33 (Rs. 400)</option>
+                  <option value="Self Store Pickup">Self Store Pickup (Free at Gulshan Shop)</option>
+                  <option value="Outside Karachi (Courier)">Outside Karachi (TCS / Leopard Courier - Rs. 350)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Fulfillment Preference</label>
+                <div class="grid grid-cols-2 gap-2">
+                  <label class="p-2.5 rounded-xl border border-slate-200 flex items-center gap-2 cursor-pointer hover:bg-slate-50">
+                    <input type="radio" name="fulfillment" value="Bykea Rider Delivery" checked onchange="calculateDeliveryFee()" class="accent-indigo-600" />
+                    <span class="font-bold text-slate-800">Rider Delivery</span>
+                  </label>
+                  <label class="p-2.5 rounded-xl border border-slate-200 flex items-center gap-2 cursor-pointer hover:bg-slate-50">
+                    <input type="radio" name="fulfillment" value="Self Store Pickup" onchange="calculateDeliveryFee()" class="accent-indigo-600" />
+                    <span class="font-bold text-slate-800">Store Pickup</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Special Notes / Urgency (Optional)</label>
+                <textarea id="cust-notes" rows="2" placeholder="e.g. Urgent thesis project, please send before 4 PM, or specific brush size request..." class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 font-medium focus:outline-none focus:border-indigo-500"></textarea>
+              </div>
+
+              <!-- Price Breakdown -->
+              <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 space-y-2 pt-3">
+                <div class="flex justify-between text-slate-600">
+                  <span class="font-medium">Items Subtotal:</span>
+                  <span id="order-subtotal" class="font-bold text-slate-900">Rs. 0</span>
+                </div>
+                <div class="flex justify-between text-slate-600">
+                  <span class="font-medium">Estimated Delivery:</span>
+                  <span id="order-delivery-fee" class="font-bold text-slate-800">Rs. 150</span>
+                </div>
+                <div class="flex justify-between text-sm font-black text-slate-900 pt-2 border-t border-slate-200">
+                  <span>Estimated Total:</span>
+                  <span id="order-grand-total" class="text-indigo-600 font-black text-base">Rs. 150</span>
+                </div>
+              </div>
+
+              <button type="submit" class="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/25 transition transform hover:-translate-y-0.5">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Complete Order via WhatsApp with Faiz Bhai</span>
+              </button>
+            </form>
+
+            <div class="text-[11px] text-slate-400 text-center leading-relaxed font-medium">
+              No online card needed. Pay via Bank Transfer, JazzCash, EasyPaisa, or Cash on Delivery / Store Pickup!
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 text-xs pt-12 pb-8 border-t border-slate-800 text-center">
+    <div class="max-w-7xl mx-auto px-4">
+      <p>&copy; 2026 SH. SAEED Art n Craft &bull; Karachi's Biggest Retail Stationery & Fine Art Shop</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/store-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    let estimatedDelivery = 150;
+
+    function calculateDeliveryFee() {
+      const fulfillment = document.querySelector('input[name="fulfillment"]:checked')?.value;
+      const area = document.getElementById('cust-area')?.value;
+
+      if (fulfillment === 'Self Store Pickup' || area === 'Self Store Pickup') {
+        estimatedDelivery = 0;
+      } else if (area.includes('Clifton') || area.includes('DHA') || area.includes('Courier')) {
+        estimatedDelivery = 350;
+      } else if (area.includes('Bahria')) {
+        estimatedDelivery = 400;
+      } else if (area.includes('PECHS') || area.includes('Nazimabad') || area.includes('Saddar') || area.includes('Malir')) {
+        estimatedDelivery = 250;
+      } else if (area.includes('Johar') || area.includes('Federal B')) {
+        estimatedDelivery = 200;
+      } else {
+        estimatedDelivery = 150;
+      }
+
+      renderCheckoutPage();
+    }
+
+    function renderCheckoutPage() {
+      const container = document.getElementById('checkout-cart-container');
+      const emptyState = document.getElementById('checkout-empty-state');
+      const subtotalEl = document.getElementById('order-subtotal');
+      const deliveryEl = document.getElementById('order-delivery-fee');
+      const grandTotalEl = document.getElementById('order-grand-total');
+
+      const cart = CartManager.getCart();
+
+      if (cart.length === 0) {
+        if (container) container.innerHTML = '';
+        if (emptyState) emptyState.classList.remove('hidden');
+        if (subtotalEl) subtotalEl.textContent = 'Rs. 0';
+        if (deliveryEl) deliveryEl.textContent = 'Rs. 0';
+        if (grandTotalEl) grandTotalEl.textContent = 'Rs. 0';
+        return;
+      }
+
+      if (emptyState) emptyState.classList.add('hidden');
+
+      let subtotal = 0;
+      let html = '';
+
+      cart.forEach(item => {
+        const lineTotal = item.price * item.quantity;
+        subtotal += lineTotal;
+
+        html += `
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm">
+            <div class="flex items-center gap-3.5">
+              <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-contain bg-white rounded-xl border border-slate-200 p-1 shrink-0 shadow-sm" />
+              <div>
+                <h4 class="font-heading font-black text-sm text-slate-900">${item.name}</h4>
+                <div class="text-[11px] text-slate-500">${item.description || item.categoryName}</div>
+                <div class="text-xs text-indigo-600 font-extrabold mt-1">Rs. ${item.price.toLocaleString()} each</div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between w-full sm:w-auto gap-4">
+              <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 px-2 py-1 rounded-xl">
+                <button onclick="CartManager.updateQuantity('${item.id}', ${item.quantity - 1})" class="w-6 h-6 rounded hover:bg-slate-200 text-slate-700 font-bold text-xs flex items-center justify-center">-</button>
+                <span class="text-xs font-black px-2 text-slate-900">${item.quantity}</span>
+                <button onclick="CartManager.updateQuantity('${item.id}', ${item.quantity + 1})" class="w-6 h-6 rounded hover:bg-slate-200 text-slate-700 font-bold text-xs flex items-center justify-center">+</button>
+              </div>
+
+              <div class="text-right">
+                <div class="text-sm font-black text-slate-900">Rs. ${lineTotal.toLocaleString()}</div>
+                <button onclick="CartManager.removeItem('${item.id}')" class="text-[11px] text-rose-500 hover:text-rose-700 hover:underline font-semibold">Delete</button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      if (container) container.innerHTML = html;
+      if (subtotalEl) subtotalEl.textContent = `Rs. ${subtotal.toLocaleString()}`;
+      if (deliveryEl) deliveryEl.textContent = estimatedDelivery === 0 ? 'FREE (Store Pickup)' : `Rs. ${estimatedDelivery.toLocaleString()}`;
+      if (grandTotalEl) grandTotalEl.textContent = `Rs. ${(subtotal + estimatedDelivery).toLocaleString()}`;
+      
+      lucide.createIcons();
+    }
+
+    function submitFinalOrder() {
+      const name = document.getElementById('cust-name')?.value.trim();
+      const phone = document.getElementById('cust-phone')?.value.trim();
+      const area = document.getElementById('cust-area')?.value;
+      const fulfillment = document.querySelector('input[name="fulfillment"]:checked')?.value || 'Rider Delivery';
+      const notes = document.getElementById('cust-notes')?.value.trim();
+
+      if (!name || !phone) {
+        showToast("Please enter your name and contact phone number", "warning");
+        return;
+      }
+
+      sendWhatsAppOrder({
+        name: name,
+        phone: phone,
+        area: area,
+        deliveryType: fulfillment,
+        notes: notes
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      calculateDeliveryFee();
+    });
+  </script>
+</body>
+</html>

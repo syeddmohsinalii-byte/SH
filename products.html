@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products Catalog | SH. SAEED Art n Craft Karachi</title>
+  <meta name="description" content="Browse over 30+ fine arts paints, stretched canvases, brushes, custom sketchbooks, architectural models and school stationery with exact product pictures at SH. SAEED Karachi." />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#eef2ff', 600: '#4f46e5', 700: '#4338ca', 900: '#1e1b4b' }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white bg-art-grid">
+
+  <!-- TOP BAR -->
+  <div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 bg-indigo-500/20 text-indigo-300 px-2.5 py-0.5 rounded-full font-semibold">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          Gulshan Flagship Store
+        </span>
+        <span class="hidden md:inline text-slate-300">📍 Momin Square, Near NIPA Flyover, Rashid Minhas Rd, Karachi</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <div class="live-store-status"></div>
+        <a href="https://wa.me/923333241272" target="_blank" class="text-emerald-400 font-semibold flex items-center gap-1">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i> 0333-3241272
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3.5 group">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-700 to-rose-500 flex items-center justify-center text-white font-heading font-black text-xl shadow-md">
+            SS
+          </div>
+          <div>
+            <span class="font-heading font-black text-xl text-slate-900 tracking-tight">SH. SAEED</span>
+            <p class="text-[11px] text-indigo-600 font-bold">ART N CRAFT &bull; RETAIL STATIONERY</p>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1.5 font-semibold text-sm text-slate-700">
+          <a href="index.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition">Home</a>
+          <a href="products.html" class="px-3.5 py-2 rounded-xl text-indigo-600 font-bold bg-indigo-50/90 transition shadow-sm">Products Catalog</a>
+          <a href="sketchbook-builder.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition flex items-center gap-1.5 text-rose-600 font-bold">
+            <i data-lucide="sparkles" class="w-4 h-4 text-rose-500"></i> Custom Sketchbook
+          </a>
+          <a href="reviews.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition flex items-center gap-1.5">
+            <span>Reviews</span>
+            <span class="bg-amber-100 text-amber-700 text-xs px-2 py-0.5 rounded-full font-black">4.6★</span>
+          </a>
+          <a href="about.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition">About Us</a>
+          <a href="contact.html" class="px-3.5 py-2 rounded-xl hover:text-indigo-600 hover:bg-slate-100/80 transition">Visit Store & Map</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <button onclick="toggleSearchModal(true)" class="p-2.5 rounded-xl text-slate-600 hover:text-indigo-600 hover:bg-white transition border border-slate-200 shadow-sm">
+            <i data-lucide="search" class="w-4 h-4"></i>
+          </button>
+          <button onclick="toggleCartDrawer(true)" class="relative p-2.5 rounded-xl bg-white hover:bg-indigo-50 text-slate-700 hover:text-indigo-600 transition border border-slate-200 shadow-sm">
+            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+            <span class="cart-count-badge hidden absolute -top-1.5 -right-1.5 bg-rose-600 text-white font-extrabold text-[11px] w-5 h-5 rounded-full flex items-center justify-center">0</span>
+          </button>
+          <a href="https://wa.me/923333241272" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Order on WhatsApp</span>
+          </a>
+          <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-slate-700">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-2">
+      <a href="index.html" class="block px-3 py-2 rounded-lg font-medium text-slate-700">Home</a>
+      <a href="products.html" class="block px-3 py-2 rounded-lg text-indigo-600 font-bold bg-indigo-50">Products Catalog</a>
+      <a href="sketchbook-builder.html" class="block px-3 py-2 rounded-lg font-semibold text-rose-600">Custom Sketchbook Builder</a>
+      <a href="reviews.html" class="block px-3 py-2 rounded-lg font-medium text-slate-700">Verified Reviews (4.6★)</a>
+      <a href="about.html" class="block px-3 py-2 rounded-lg font-medium text-slate-700">About Us</a>
+      <a href="contact.html" class="block px-3 py-2 rounded-lg font-medium text-slate-700">Visit Store & Map</a>
+    </div>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="bg-mesh-dark text-white py-14 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-amber-400 font-bold bg-white/10 px-3 py-1 rounded-full border border-white/20">
+          Official Physical Store Inventory
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-heading font-black mt-3">Fine Art & Stationery Catalog</h1>
+        <p class="text-slate-300 text-xs sm:text-sm mt-2 max-w-xl">
+          Every product listed below features its <strong>exact authentic photograph</strong>. Order directly via WhatsApp or add to cart for store pickup / rider delivery across Karachi.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        <a href="sketchbook-builder.html" class="px-5 py-3 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-rose-600/25">
+          <i data-lucide="sparkles" class="w-4 h-4"></i> Custom Sketchbook Builder
+        </a>
+        <a href="https://wa.me/923333241272?text=Salam%20Faiz%20Bhai,%20I%20am%20looking%20for%20a%20specific%20product%20not%20listed%20on%20website" target="_blank" class="px-5 py-3 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs flex items-center gap-2">
+          <i data-lucide="help-circle" class="w-4 h-4 text-amber-400"></i> Ask for Rare Mediums
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CATALOG INTERACTION -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Filter Bar -->
+      <div class="bg-white p-5 rounded-3xl border border-slate-200/90 shadow-sm mb-8 space-y-4">
+        
+        <!-- Category Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none text-xs font-bold">
+          <button onclick="filterCategory('all')" id="tab-all" class="nav-tab active px-4 py-2.5 rounded-2xl border border-slate-200 transition shrink-0">
+            All Products (<span id="count-all">0</span>)
+          </button>
+          <button onclick="filterCategory('paints')" id="tab-paints" class="nav-tab px-4 py-2.5 rounded-2xl bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition shrink-0">
+            🎨 Fine Arts & Paints (<span id="count-paints">0</span>)
+          </button>
+          <button onclick="filterCategory('canvas')" id="tab-canvas" class="nav-tab px-4 py-2.5 rounded-2xl bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition shrink-0">
+            🖼️ Canvases & Surfaces (<span id="count-canvas">0</span>)
+          </button>
+          <button onclick="filterCategory('brushes')" id="tab-brushes" class="nav-tab px-4 py-2.5 rounded-2xl bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition shrink-0">
+            🖌️ Brushes, Knives & Easels (<span id="count-brushes">0</span>)
+          </button>
+          <button onclick="filterCategory('paper')" id="tab-paper" class="nav-tab px-4 py-2.5 rounded-2xl bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition shrink-0">
+            📜 Papers & Sketchbooks (<span id="count-paper">0</span>)
+          </button>
+          <button onclick="filterCategory('craft')" id="tab-craft" class="nav-tab px-4 py-2.5 rounded-2xl bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition shrink-0">
+            📐 Craft & Architecture (<span id="count-craft">0</span>)
+          </button>
+          <button onclick="filterCategory('stationery')" id="tab-stationery" class="nav-tab px-4 py-2.5 rounded-2xl bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 transition shrink-0">
+            ✏️ School & Office (<span id="count-stationery">0</span>)
+          </button>
+        </div>
+
+        <!-- Search & Sort Row -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-3 border-t border-slate-100">
+          <div class="w-full sm:w-80 relative">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+            <input 
+              id="filter-search" 
+              type="text" 
+              placeholder="Search by title, brand, or medium..." 
+              class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-indigo-500 font-medium"
+              oninput="renderCatalog()"
+            />
+          </div>
+
+          <div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+            <span class="text-xs text-slate-500 font-semibold">Sort By:</span>
+            <select id="sort-select" onchange="renderCatalog()" class="bg-slate-50 border border-slate-200 rounded-2xl px-4 py-2.5 text-xs text-slate-700 font-bold focus:outline-none">
+              <option value="featured">Featured / Best Sellers</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Top Customer Rated</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Catalog Grid with exact product images -->
+      <div id="catalog-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="catalog-empty-state" class="hidden text-center py-20 bg-white rounded-3xl border border-slate-200">
+        <i data-lucide="package-search" class="w-14 h-14 mx-auto text-slate-300 mb-3"></i>
+        <h3 class="font-heading font-black text-lg text-slate-800">No matching products found</h3>
+        <p class="text-xs text-slate-500 mt-1 max-w-sm mx-auto">
+          We stock over 15,000 items in our physical Gulshan store. If you can't find it here, ask Faiz Bhai directly!
+        </p>
+        <a href="https://wa.me/923333241272?text=Salam%20Faiz%20Bhai,%20I%20am%20looking%20for%20an%20item%20not%20found%20in%20catalog" target="_blank" class="inline-flex items-center gap-2 mt-4 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> Inquire via WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INSTITUTIONAL / STUDENT DISCOUNT BANNER -->
+  <section class="py-12 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-tr from-indigo-950 via-indigo-900 to-indigo-800 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+        <div class="relative z-10 max-w-2xl space-y-4">
+          <span class="inline-block bg-indigo-500/30 text-indigo-200 font-bold text-xs px-3.5 py-1 rounded-full uppercase tracking-wider border border-indigo-400/20">
+            Architecture & Fine Art Students
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-heading font-black">Studying at IVS, KU, NED, or Beaconhouse?</h2>
+          <p class="text-indigo-100 text-xs sm:text-sm leading-relaxed">
+            We provide specialized semester supply bundles, bulk discounts on drafting paper and canvases, and thesis project support. Show your student ID at our shop or send your supply list on WhatsApp!
+          </p>
+          <div class="pt-2 flex flex-wrap gap-3">
+            <a href="https://wa.me/923333241272?text=Salam%20Faiz%20Bhai,%20I%20am%20an%20art/architecture%20student%20and%20need%20a%20quote%20for%20semester%20supplies" target="_blank" class="px-6 py-3 rounded-2xl bg-white text-indigo-950 hover:bg-indigo-50 font-black text-xs shadow-lg transition">
+              Send Student Supply List
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 text-xs pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>&copy; 2026 SH. SAEED Art n Craft (Karachi). Store Phone: 0333-3241272.</p>
+      <div class="flex gap-4 font-semibold">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="products.html" class="text-white">Products</a>
+        <a href="sketchbook-builder.html" class="hover:text-white">Custom Sketchbooks</a>
+        <a href="reviews.html" class="hover:text-white">Reviews</a>
+        <a href="contact.html" class="hover:text-white">Contact & Map</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER & SEARCH MODALS -->
+  <div id="cart-drawer-overlay" onclick="toggleCartDrawer(false)" class="cart-drawer-overlay fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50"></div>
+  <aside id="cart-drawer" class="cart-drawer fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-50 shadow-2xl flex flex-col">
+    <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+      <div class="flex items-center gap-2">
+        <i data-lucide="shopping-bag" class="w-5 h-5 text-indigo-600"></i>
+        <h3 class="font-heading font-bold text-lg text-slate-900">Your Stationery Order</h3>
+      </div>
+      <button onclick="toggleCartDrawer(false)" class="p-2 rounded-lg text-slate-400 hover:text-slate-700">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto p-4 space-y-3">
+      <div id="cart-drawer-empty" class="text-center py-16 text-slate-400">
+        <i data-lucide="shopping-basket" class="w-12 h-12 mx-auto stroke-1 text-slate-300 mb-3"></i>
+        <p class="text-sm font-medium text-slate-600">Your order list is empty.</p>
+      </div>
+      <div id="cart-drawer-items"></div>
+    </div>
+    <div id="cart-drawer-footer" class="hidden p-4 border-t border-slate-200 bg-slate-50 space-y-3">
+      <div class="flex items-center justify-between text-sm">
+        <span class="text-slate-600 font-medium">Estimated Subtotal:</span>
+        <span class="cart-total-amount text-lg font-black text-indigo-600">Rs. 0</span>
+      </div>
+      <div class="grid grid-cols-2 gap-2 pt-1">
+        <a href="cart.html" class="w-full py-3 rounded-xl bg-slate-200 text-slate-800 text-center font-bold text-xs">
+          View Cart
+        </a>
+        <button onclick="sendWhatsAppOrder()" class="w-full py-3 rounded-xl bg-emerald-600 text-white font-bold text-xs flex items-center justify-center gap-1.5">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- SEARCH MODAL -->
+  <div id="search-modal" class="modal-backdrop fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 flex items-start justify-center p-4 pt-16 sm:pt-24">
+    <div class="w-full max-w-xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
+      <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+        <i data-lucide="search" class="w-5 h-5 text-indigo-600"></i>
+        <input id="search-input" type="text" placeholder="Search paints, Cadence, canvases, sketchbooks..." class="w-full text-sm text-slate-900 focus:outline-none" oninput="handleLiveSearch(this.value)" />
+        <button onclick="toggleSearchModal(false)" class="text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">ESC</button>
+      </div>
+      <div id="search-results" class="max-h-96 overflow-y-auto p-4"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/store-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    lucide.createIcons();
+
+    let currentCategory = 'all';
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const catParam = urlParams.get('cat');
+    if (catParam) {
+      currentCategory = catParam;
+    }
+
+    function updateCategoryCounts() {
+      document.getElementById('count-all').textContent = PRODUCT_CATALOG.length;
+      document.getElementById('count-paints').textContent = PRODUCT_CATALOG.filter(p => p.category === 'paints').length;
+      document.getElementById('count-canvas').textContent = PRODUCT_CATALOG.filter(p => p.category === 'canvas').length;
+      document.getElementById('count-brushes').textContent = PRODUCT_CATALOG.filter(p => p.category === 'brushes').length;
+      document.getElementById('count-paper').textContent = PRODUCT_CATALOG.filter(p => p.category === 'paper').length;
+      document.getElementById('count-craft').textContent = PRODUCT_CATALOG.filter(p => p.category === 'craft').length;
+      document.getElementById('count-stationery').textContent = PRODUCT_CATALOG.filter(p => p.category === 'stationery').length;
+    }
+
+    function filterCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.nav-tab').forEach(tab => {
+        tab.classList.remove('active', 'bg-indigo-600', 'text-white');
+        tab.classList.add('bg-slate-50', 'text-slate-700');
+      });
+      const activeBtn = document.getElementById(`tab-${cat}`);
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+        activeBtn.classList.remove('bg-slate-50', 'text-slate-700');
+      }
+      renderCatalog();
+    }
+
+    function renderCatalog() {
+      const container = document.getElementById('catalog-products-grid');
+      const emptyState = document.getElementById('catalog-empty-state');
+      const searchQuery = (document.getElementById('filter-search')?.value || '').trim().toLowerCase();
+      const sortValue = document.getElementById('sort-select')?.value || 'featured';
+
+      let items = PRODUCT_CATALOG.filter(p => {
+        const matchesCategory = currentCategory === 'all' || p.category === currentCategory;
+        const matchesSearch = !searchQuery || 
+          p.name.toLowerCase().includes(searchQuery) ||
+          p.description.toLowerCase().includes(searchQuery) ||
+          p.categoryName.toLowerCase().includes(searchQuery) ||
+          (p.tags && p.tags.some(t => t.toLowerCase().includes(searchQuery)));
+        return matchesCategory && matchesSearch;
+      });
+
+      if (sortValue === 'price-low') {
+        items.sort((a, b) => a.price - b.price);
+      } else if (sortValue === 'price-high') {
+        items.sort((a, b) => b.price - a.price);
+      } else if (sortValue === 'rating') {
+        items.sort((a, b) => b.rating - a.rating);
+      }
+
+      if (items.length === 0) {
+        container.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      let html = '';
+      items.forEach(item => {
+        const discountPercent = Math.round(((item.originalPrice - item.price) / item.originalPrice) * 100);
+        html += `
+          <div class="product-card bg-white rounded-3xl border border-slate-200/90 overflow-hidden flex flex-col justify-between p-4 group shadow-sm hover:shadow-xl transition-all">
+            <div>
+              <div class="relative h-52 rounded-2xl overflow-hidden bg-white mb-3.5 flex items-center justify-center p-3 border border-slate-100 cursor-pointer" onclick="openQuickView('${item.id}')">
+                <img src="${item.image}" alt="${item.name}" class="image-zoom max-h-44 w-auto object-contain" />
+                <span class="absolute top-2.5 left-2.5 bg-slate-900/85 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded-lg shadow-sm">
+                  ${item.badge || item.categoryName}
+                </span>
+                <span class="absolute top-2.5 right-2.5 bg-rose-600 text-white text-[10px] font-black px-1.5 py-0.5 rounded-md shadow-sm">
+                  -${discountPercent}%
+                </span>
+                <button onclick="event.stopPropagation(); openQuickView('${item.id}');" class="hover-action-overlay absolute bottom-2.5 inset-x-2.5 py-2 bg-white/95 backdrop-blur text-slate-800 text-xs font-bold rounded-xl shadow-md border border-slate-200 flex items-center justify-center gap-1.5">
+                  <i data-lucide="eye" class="w-4 h-4 text-indigo-600"></i> Quick View & Specs
+                </button>
+              </div>
+              
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] text-indigo-600 font-extrabold uppercase tracking-wider">${item.categoryName}</span>
+                <span class="text-[10px] font-bold text-amber-600 bg-amber-50 px-1.5 py-0.2 rounded flex items-center gap-0.5">★ ${item.rating}</span>
+              </div>
+
+              <h4 class="font-heading font-black text-sm text-slate-900 mt-1 line-clamp-2 cursor-pointer hover:text-indigo-600 transition" onclick="openQuickView('${item.id}')">${item.name}</h4>
+              <p class="text-xs text-slate-500 mt-1 line-clamp-2">${item.description}</p>
+              
+              <div class="mt-2 text-[11px] text-emerald-600 font-bold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span>${item.stock}</span>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <div class="text-[11px] text-slate-400 line-through">Rs. ${item.originalPrice.toLocaleString()}</div>
+                <div class="text-base font-black text-slate-900">Rs. ${item.price.toLocaleString()}</div>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button onclick="CartManager.addItem('${item.id}')" class="p-2.5 rounded-xl bg-indigo-50 hover:bg-indigo-600 text-indigo-600 hover:text-white transition shadow-sm" title="Add to Cart">
+                  <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                </button>
+                <button onclick="quickBuyOnWhatsApp('${item.id}')" class="p-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white transition shadow-sm" title="Quick Order via WhatsApp">
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+      lucide.createIcons();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCategoryCounts();
+      filterCategory(currentCategory);
+    });
+  </script>
+</body>
+</html>
